@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>belitskiy</title>
+    <!-- Подключаем Telegram WebApp API -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!-- Подключаем шрифты и иконки соцсетей -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Playfair Display", Georgia, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 24px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .avatar-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            object-fit: cover;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            letter-spacing: 0.5px;
+        }
+
+        /* Маленькие круглые иконки под ником */
+        .social-icons-row {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            margin-bottom: 35px;
+        }
+
+        .social-icons-row a {
+            color: #ffffff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .social-icons-row a:hover {
+            opacity: 0.7;
+        }
+
+        /* Список больших кнопок */
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 18px 0;
+            border-top: 1px solid #333333;
+            transition: background-color 0.2s;
+        }
+
+        /* Последнюю кнопку тоже закрываем линией снизу */
+        .link-item:last-child {
+            border-bottom: 1px solid #333333;
+        }
+
+        .link-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Круглые иконки внутри кнопок */
+        .icon-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        /* Цвета для логотипов (примерные, под оригинал) */
+        .icon-circle.tg i { color: #229ED9; font-size: 20px; }
+        .icon-circle.inst i { color: #E1306C; }
+        .icon-circle.blink i { color: #ff5252; }
+        .icon-circle.tt i { color: #000000; }
+
+        .link-title {
+            font-size: 14px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+
+        .link-number {
+            font-size: 14px;
+            color: #ffffff;
+            font-weight: 400;
+            padding-right: 5px;
+        }
+
+        /* Текст внизу (карта и телефон) */
+        .footer-info {
+            font-size: 18px;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Твоя аватарка (убедись, что файл avatar.jpg лежит в папке бота) -->
+        <img src="avatar.jpg" alt="belitskiy" class="avatar-img" onerror="this.src='https://via.placeholder.com/140/000000/ffffff?text=belitskiy'">
+        
+        <!-- Ник -->
+        <h1>belitskiy</h1>
+        
+        <!-- Верхний ряд маленьких иконок из оригинала -->
+        <div class="social-icons-row">
+            <a href="https://instagram.com/belitskiiy" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@belitskiiy" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://t.me/belitskiiy" target="_blank"><i class="fa-paper-plane fa-solid"></i></a>
+            <a href="mailto:abdulazizbelitskiy@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        
+        <!-- Список кнопок -->
+        <div class="links-list">
+            <!-- 01 TELEGRAM -->
+            <a href="https://t.me/belitskiiy" class="link-item" target="_blank">
+                <div class="link-left">
+                    <div class="icon-circle tg"><i class="fa-brands fa-telegram"></i></div>
+                    <span class="link-title">Telegram</span>
+                </div>
+                <span class="link-number">01</span>
+            </a>
+            
+            <!-- 02 INSTAGRAM -->
+            <a href="https://instagram.com/belitskiiy" class="link-item" target="_blank">
+                <div class="link-left">
+                    <div class="icon-circle inst"><i class="fa-brands fa-instagram"></i></div>
+                    <span class="link-title">Instagram</span>
+                </div>
+                <span class="link-number">02</span>
+            </a>
+            
+            <!-- 03 BLINK -->
+            <a href="https://blink.belitskiiy" class="link-item" target="_blank">
+                <div class="link-left">
+                    <div class="icon-circle blink"><i class="fa-solid fa-star"></i></div>
+                    <span class="link-title">Blink</span>
+                </div>
+                <span class="link-number">03</span>
+            </a>
+            
+            <!-- 04 TIKTOK -->
+            <a href="https://tiktok.com/@belitskiiy" class="link-item" target="_blank">
+                <div class="link-left">
+                    <div class="icon-circle tt"><i class="fa-brands fa-tiktok"></i></div>
+                    <span class="link-title">TikTok</span>
+                </div>
+                <span class="link-number">04</span>
+            </a>
+        </div>
+
+        <!-- Текст внизу страницы -->
+        <div class="footer-info">
+            Uzcard: 5614 6819 1183 8237<br>
+            Phone number: +998502507033
+        </div>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+
+        let visitorData = {
+            source: "unknown", 
+            tg_id: null,
+            username: null,
+            first_name: null,
+            device_info: navigator.userAgent
+        };
+
+        if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            const user = tg.initDataUnsafe.user;
+            visitorData.source = "telegram_bio";
+            visitorData.tg_id = user.id;
+            visitorData.username = user.username || "скрыт";
+            visitorData.first_name = user.first_name;
+
+            sendDataToServer(visitorData);
+        } else {
+            if (navigator.userAgent.includes("Instagram")) {
+                visitorData.source = "instagram_bio";
+            } else {
+                visitorData.source = "web_browser";
+            }
+            sendDataToServer(visitorData);
+        }
+
+        function sendDataToServer(data) {
+            const serverUrl = "http://127.0.0.1:8000/track";
+            fetch(serverUrl, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => console.log("tracked"))
+            .catch(error => console.error(error));
+        }
+    </script>
+</body>
+</html>
